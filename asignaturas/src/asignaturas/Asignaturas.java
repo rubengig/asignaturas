@@ -174,10 +174,10 @@ public class Asignaturas {
 				try {
 					Connection con=ConnectionSingleton.getConnection();
 					
-					PreparedStatement ins_pstmt = con.prepareStatement("INSERT INTO asignaturas (codas, nomas, horas) VALUES (?, ?, ?)");
-					ins_pstmt.setInt(1, id);
-					ins_pstmt.setString(2, nombre);
-					ins_pstmt.setInt(3, horas);
+					PreparedStatement ins_pstmt = con.prepareStatement("INSERT INTO asignaturas (nomas, horas) VALUES (?, ?)");
+					
+					ins_pstmt.setString(1, nombre);
+					ins_pstmt.setInt(2, horas);
 					
 					ins_pstmt.executeUpdate();
 					ins_pstmt.close();
